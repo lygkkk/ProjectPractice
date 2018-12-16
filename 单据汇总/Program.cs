@@ -85,7 +85,7 @@ namespace 单据汇总
             var viewData = dt.AsEnumerable().GroupBy(x => new {单据类型 = x[0], 单位名称 = x[1]}, x=> x[2]).
                 Select(x =>
                 {
-                    var dwmc = x.Key.单位名称;
+                    //var dwmc = x.Key.单位名称;
                     var data = Array.ConvertAll<object, int>(x.ToArray(), e => int.Parse(e.ToString()));
                     var max = data.Max();
                     var min = data.Min();

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "单据汇总", "单据汇总\单据汇总.csproj", "{A30B1E1E-BD70-4E83-9461-E03F62CF58DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelCopyRang", "ExcelCopyRang\ExcelCopyRang.csproj", "{B22C32CA-955D-494E-9314-FCDEFF67892D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A30B1E1E-BD70-4E83-9461-E03F62CF58DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A30B1E1E-BD70-4E83-9461-E03F62CF58DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A30B1E1E-BD70-4E83-9461-E03F62CF58DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B22C32CA-955D-494E-9314-FCDEFF67892D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B22C32CA-955D-494E-9314-FCDEFF67892D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B22C32CA-955D-494E-9314-FCDEFF67892D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B22C32CA-955D-494E-9314-FCDEFF67892D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

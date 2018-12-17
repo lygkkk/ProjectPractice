@@ -106,10 +106,21 @@ namespace 单据汇总
                     return new{ x.Key.单据类型, x.Key.单位名称, result };
                 });
 
+            #region 测试FirstOrDefault机制
 
-            foreach (var item in viewData)
+            string[] ddd = new[] {"柯桥爱尚美化妆品", "⊙唐三彩武林2店", "⊙唐三彩下沙保利湾店"};
+            var test = viewData.Select(e =>
             {
-                //item.
+                var cc1 = e.单位名称;
+                var aa = ddd.FirstOrDefault(a => a.ToString() == e.单位名称.ToString());
+                Debug.Print(aa ?? $"{cc1}没有找到");
+                return new {e.单据类型, cc = aa + cc1 + "哈哈", e.result };
+            });
+
+            #endregion
+            foreach (var item in test)
+            {
+                
             }
 
             return null;

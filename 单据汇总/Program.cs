@@ -19,8 +19,15 @@ namespace 单据汇总
          static void Main(string[] args)
          {
             
-            OperationExcel();
 
+
+             string str = "1,2,3";
+             string str1 = "1,3,3";
+            //var t1 = string.Join(",", str.Split(',').OrderBy(e => e)) == string.Join(",", str1.Split(',').OrderBy(e => e));
+            var t1 = string.Join(",", str1.Split(',').OrderBy(e => e));
+            //var t2 = str.Split(',').Join(str1.Split(','), c => c, e => e, (c, e) => new {c,e}).Any();
+            OperationExcel();
+        
 
             //var orderList = GetOrderList();
             #region Select版本
@@ -91,6 +98,7 @@ namespace 单据汇总
             #region 写入数据
 
             object[,] values = new object[2, 3] { { "test", "", null }, { "序号", "名称", "描述" } };
+            
             sht.get_Range("A1", "C2").Value2 = values;
             int x = values.GetLength(1);
             int low = values.GetLowerBound(0);

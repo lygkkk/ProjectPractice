@@ -13,7 +13,7 @@ namespace ProjectPractice.MariaDb
             string c = "张李孙王";
             MariaContext mariaContext = new MariaContext();
 
-            var dd = mariaContext.UserInfos.Where(e => e.Name.Contains()).ToList();
+            var dd = mariaContext.UserInfos.Where(e => e.Name.Contains("")).ToList();
 
             
         }

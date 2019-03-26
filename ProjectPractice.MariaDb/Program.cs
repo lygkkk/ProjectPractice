@@ -13,6 +13,16 @@ namespace ProjectPractice.MariaDb
             string c = "张李孙王";
             MariaContext mariaContext = new MariaContext();
 
+            mariaContext.UserInfos.Add(new UserInfo
+            {
+                Id = 11,
+                Name =  "李超"
+            });
+
+            mariaContext.SaveChanges();
+
+
+
             var dd = mariaContext.UserInfos.Where(e => e.Name.Contains("")).ToList();
 
             

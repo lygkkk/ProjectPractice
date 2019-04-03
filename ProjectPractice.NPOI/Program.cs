@@ -19,7 +19,7 @@ namespace ProjectPractice.NPOI
         static void Main(string[] args)
         {
 
-            FileStream = File.OpenRead(@"C:\Users\Administrator\Desktop\数据筛选之多种方法效率.xlsx");
+            FileStream = new FileStream(@"C:\Users\Administrator\Desktop\销售出库单明细.xls", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             Workbook = new XSSFWorkbook(FileStream);
             Sheet = Workbook.GetSheet("Sheet1");
             LastRow = Sheet.LastRowNum;

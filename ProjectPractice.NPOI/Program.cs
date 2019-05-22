@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.Streaming;
@@ -37,6 +38,43 @@ namespace ProjectPractice.NPOI
 
 
         }
+
+        #region 获取单元格值类型
+        /// <summary>
+        /// 获取单元格值类型
+        /// </summary>
+        /// <param name="cell"></param>
+        /// <param name="dataRow"></param>
+        /// <param name="columnNum"></param>
+        private void GetCellType(ICell cell, DataRow dataRow, int columnNum)
+        {
+            try
+            {
+                switch (cell.CellType)
+                {
+                    case CellType.String:
+                        dataRow[columnNum] = cell.StringCellValue;
+                        break;
+                    case CellType.Numeric:
+                        if (DateUtil.IsCellDateFormatted(cell))
+                        {
+                            dataRow[columnNum] = cell.DateCellValue;
+                        }
+                        else
+                        {
+                            dataRow[columnNum] = cell.NumericCellValue;
+                        }
+                        break;
+
+                    default:
+                        dataRow[columnNum] = "";
+                        break;
+                }
+            }
+            catch (Exception e)
+            { }
+        }
+        #endregion
 
         private static void GetAllData()
         {

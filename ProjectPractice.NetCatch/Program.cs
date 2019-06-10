@@ -10,15 +10,22 @@ namespace ProjectPractice.NetCatch
     {
         static void Main(string[] args)
         {
-            string htmlCode;
-            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(@"http://sso.ematong.com/login?service=http://bm.ematong.com/shiro-cas");
+           GetVerificationCode();
+           
+
             
-            //httpWebRequest.Method = "GET";
-            //httpWebRequest.ContentType = "text/plain;charset=gb2312";
-            //httpWebRequest.UserAgent =
-            //    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36";
-            //httpWebRequest.UserAgent = "Mozilla/4.0";
-            //httpWebRequest.Headers.Add("Accept-Encoding", "gzip, deflate");
+       
+
+
+        }
+
+        #region 获取验证码
+
+        public static void GetVerificationCode()
+        {
+            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(@"http://sso.ematong.com");
+            httpWebRequest.Method = "GET";
+            httpWebRequest.Headers.Add("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 
             HttpWebResponse response = (HttpWebResponse)httpWebRequest.GetResponse();
             Stream myResponseStream = response.GetResponseStream();
@@ -26,10 +33,9 @@ namespace ProjectPractice.NetCatch
             string retString = myStreamReader.ReadToEnd();
             myStreamReader.Close();
             myResponseStream.Close();
-       
-
-
         }
+
+        #endregion
 
 
         public static string GetHtmlWithUtf(string url)

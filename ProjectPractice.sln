@@ -31,9 +31,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.FileStream"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectPractice.Async", "ProjectPractice.Async\ProjectPractice.Async.csproj", "{9D51F3DD-8136-487F-85DB-AF54E3B53311}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.FileStreamAsync", "ProjectPractice.FileStreamAsync\ProjectPractice.FileStreamAsync.csproj", "{F6ED66E1-78B9-45BD-ABA3-1AE7D04FCD11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectPractice.FileStreamAsync", "ProjectPractice.FileStreamAsync\ProjectPractice.FileStreamAsync.csproj", "{F6ED66E1-78B9-45BD-ABA3-1AE7D04FCD11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.NetCatch", "ProjectPractice.NetCatch\ProjectPractice.NetCatch.csproj", "{369EAA37-7ED5-4010-AEDB-AAC8050A78DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectPractice.NetCatch", "ProjectPractice.NetCatch\ProjectPractice.NetCatch.csproj", "{369EAA37-7ED5-4010-AEDB-AAC8050A78DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.Netcathc-dotnet", "ProjectPractice.Netcathc-dotnet\ProjectPractice.Netcathc-dotnet.csproj", "{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{369EAA37-7ED5-4010-AEDB-AAC8050A78DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{369EAA37-7ED5-4010-AEDB-AAC8050A78DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{369EAA37-7ED5-4010-AEDB-AAC8050A78DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

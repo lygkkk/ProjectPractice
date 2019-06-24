@@ -25,6 +25,7 @@ namespace ProjectPractice.NetCatch
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(@"http://sso.ematong.com");
             httpWebRequest.Method = "GET";
+            httpWebRequest.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8";
             httpWebRequest.Headers.Add("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 
             HttpWebResponse response = (HttpWebResponse)httpWebRequest.GetResponse();

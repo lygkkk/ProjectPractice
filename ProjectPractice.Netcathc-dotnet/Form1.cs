@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HtmlAgilityPack;
 
 namespace ProjectPractice.Netcathc_dotnet
 {
@@ -25,6 +26,9 @@ namespace ProjectPractice.Netcathc_dotnet
             
 
             GetVerificationCode(@"http://sso.ematong.com/captcha.jpg?", GetCookie(@"http://sso.ematong.com"));
+
+
+            
 
             //HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(@"http://sso.ematong.com");
             //httpWebRequest.Method = "GET";
@@ -68,6 +72,10 @@ namespace ProjectPractice.Netcathc_dotnet
             //httpWebRequest.Headers.Add("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 
             HttpWebResponse response = (HttpWebResponse)httpWebRequest.GetResponse();
+
+
+            HtmlAgilityPack. htmlParse = new HtmlAgilityPack();
+
             return response.Headers.GetValues("Set-Cookie")[0].Split(';')[0];      
         }
 
@@ -106,6 +114,18 @@ namespace ProjectPractice.Netcathc_dotnet
 
             return "1";
            
+        }
+
+        #endregion
+
+        #region 登录
+
+        private void Login()
+        {
+            string account = "15906696262";
+            string pwd = "696262";
+            string verificationCode = textBox1.Text;
+
         }
 
         #endregion

@@ -108,19 +108,21 @@ namespace ProjectPractice.Netcathc_dotnet
 
         private void Login()
         {
-            string account = "username=15906696262&";
-            string pwd = "password=696262&";
-            string verificationCode = $@"yzm={textBox1.Text}";
-
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://sso.ematong.com/login?service=http://bm.ematong.com/shiro-cas");
+            string account = "userId:15906696262,";
+            string pwd = "pwd:696262";
+            string verificationCode = textBox1.Text;
+            byte[] paramBytes = Encoding.UTF8.GetBytes(account + pwd);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"http://sso.ematong.com/checkYzm.do?yzm={verificationCode}");
             request.Method = "POST";
-
+            //request.Headers.Add("Referer", @"http://sso.ematong.com/login?service=http://bm.ematong.com/shiro-cas");
+            request.Referer = @"http://bm.ematong.com/public/getUserInfo?callback=?";
+            request.ContentLength = paramBytes.Length;
             request.Headers.Add("cookie", _cookie);
+            request.KeepAlive = true;
+            //string param = "";
+            //_loginInfor.ForEach(val => param += val);
 
-            string param = "";
-            _loginInfor.ForEach(val => param += val);
-
-            byte[] paramBytes = Encoding.UTF8.GetBytes(param + account + pwd + verificationCode);
+           
 
             Stream requestStream = request.GetRequestStream();
             requestStream.Write(paramBytes, 0, paramBytes.Length);

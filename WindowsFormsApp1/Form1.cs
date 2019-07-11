@@ -8,20 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 单据汇总
+namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        public event Action<string> ConfirmClick;
         public Form1()
         {
             InitializeComponent();
             comboBox1.Items.Add("1");
             comboBox1.Items.Add("2");
             comboBox1.Items.Add("3");
-            comboBox1.Items.Add("4");
-            comboBox1.Items.Add("5");
-            button1.Click += (sender, args) => ConfirmClick.Invoke(textBox1.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Remove(comboBox1.SelectedItem);
+            if ((comboBox1.Items.Count == 0))
+            {
+                comboBox1.Text = "";
+            }
+                
+            
         }
     }
 }

@@ -19,14 +19,14 @@ namespace 单据汇总
          static void Main(string[] args)
          {
             
-
-
-             string str = "1,2,3";
-             string str1 = "1,3,3";
-            //var t1 = string.Join(",", str.Split(',').OrderBy(e => e)) == string.Join(",", str1.Split(',').OrderBy(e => e));
-            var t1 = string.Join(",", str1.Split(',').OrderBy(e => e));
+            form = new Form1{ShowInTaskbar = true};
+            
+            // string str = "1,2,3";
+            // string str1 = "1,3,3";
+            ////var t1 = string.Join(",", str.Split(',').OrderBy(e => e)) == string.Join(",", str1.Split(',').OrderBy(e => e));
+            //var t1 = string.Join(",", str1.Split(',').OrderBy(e => e));
             //var t2 = str.Split(',').Join(str1.Split(','), c => c, e => e, (c, e) => new {c,e}).Any();
-            OperationExcel();
+            //OperationExcel();
         
 
             //var orderList = GetOrderList();
@@ -82,7 +82,7 @@ namespace 单据汇总
             //}
             #endregion
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
 
         #region 操作excel

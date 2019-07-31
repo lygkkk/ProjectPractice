@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectPractice.NetCatch", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.Netcathc-dotnet", "ProjectPractice.Netcathc-dotnet\ProjectPractice.Netcathc-dotnet.csproj", "{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.Chain", "ProjectPractice.Chain\ProjectPractice.Chain.csproj", "{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D27B649C-4E0C-4FB5-8551-F29E1596A8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

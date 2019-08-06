@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.Netcathc-do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.Chain", "ProjectPractice.Chain\ProjectPractice.Chain.csproj", "{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.GroupBy", "ProjectPractice.GroupBy\ProjectPractice.GroupBy.csproj", "{BFC6A890-0792-446F-8390-B5D015C23F21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.JsonToEntity", "ProjectPractice.JsonToEntity\ProjectPractice.JsonToEntity.csproj", "{CD4C552B-6F37-449D-9672-73BA9127D1FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,14 @@ Global
 		{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{128ECAEE-11D3-451C-A9E3-E94F54AFB9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC6A890-0792-446F-8390-B5D015C23F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC6A890-0792-446F-8390-B5D015C23F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC6A890-0792-446F-8390-B5D015C23F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC6A890-0792-446F-8390-B5D015C23F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD4C552B-6F37-449D-9672-73BA9127D1FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD4C552B-6F37-449D-9672-73BA9127D1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD4C552B-6F37-449D-9672-73BA9127D1FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD4C552B-6F37-449D-9672-73BA9127D1FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

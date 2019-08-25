@@ -62,7 +62,7 @@ namespace ProjectPractice.Netcathc_dotnet
             htmlDocument.LoadHtml(htmlString);
             var nodes = htmlDocument.DocumentNode.SelectNodes("//input[@type='hidden']").ToList();
             _loginInfor = new List<string>();
-            nodes.ForEach(value => _loginInfor.Add(value.Attributes[1].Value + "=" + value.Attributes[2].Value + "&"));
+            nodes.ForEach(value => _loginInfor.Add(value.Attributes[1].Value + ": " + value.Attributes[2].Value + "&"));
             _cookie = (response.Headers.GetValues("Set-Cookie")[0].Split(';')[0]);
                  
         }
@@ -108,21 +108,22 @@ namespace ProjectPractice.Netcathc_dotnet
 
         private void Login()
         {
-            string account = "userId:15906696262,";
-            string pwd = "pwd:696262";
-            string verificationCode = textBox1.Text;
-            byte[] paramBytes = Encoding.UTF8.GetBytes(account + pwd);
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"http://sso.ematong.com/checkYzm.do?yzm={verificationCode}");
+            string account = "username: 15906696262&";
+            string pwd = "password: 696262&";
+            string verificationCode = $"yzm: {textBox1.Text}";
+
+            string param = $"{_loginInfor[0]}{_loginInfor[0]}{_loginInfor[2]}{account}{pwd}{verificationCode}";
+            byte[] paramBytes = Encoding.UTF8.GetBytes(param);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"http://sso.ematong.com/login");
+
             request.Method = "POST";
-            //request.Headers.Add("Referer", @"http://sso.ematong.com/login?service=http://bm.ematong.com/shiro-cas");
-            request.Referer = @"http://bm.ematong.com/public/getUserInfo?callback=?";
+            request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3";
+            request.UserAgent =
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36";
+            request.Referer = @"http://sso.ematong.com/login";
             request.ContentLength = paramBytes.Length;
             request.Headers.Add("cookie", _cookie);
             request.KeepAlive = true;
-            //string param = "";
-            //_loginInfor.ForEach(val => param += val);
-
-           
 
             Stream requestStream = request.GetRequestStream();
             requestStream.Write(paramBytes, 0, paramBytes.Length);

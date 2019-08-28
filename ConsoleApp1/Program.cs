@@ -11,6 +11,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
+            List<string> files = new List<string>();
+            files.Add(@"C:\Users\Administrator\Desktop\技术分享读取13000个XML文件程序");
+
+            //
+            var x1 = Directory.GetFiles(@"C:\Users\Administrator\Desktop\技术分享读取13000个XML文件程序", "*.cs", SearchOption.AllDirectories);
+
+
+            var x2 = Directory.GetDirectories(@"C:\Users\Administrator\Desktop\技术分享读取13000个XML文件程序", "*", SearchOption.AllDirectories);
+
+            string[] directories = Directory.GetDirectories(@"C:\Users\Administrator\Desktop\技术分享读取13000个XML文件程序");
+            files.AddRange(directories);
             
             var assembly = Assembly.GetAssembly(typeof(File));
             //var classInstance = assembly.CreateInstance(assembly.GetTypes()[0].FullName);

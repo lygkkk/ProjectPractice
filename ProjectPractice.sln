@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.DelegateEve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.zhengjie", "ProjectPractice.zhengjie\ProjectPractice.zhengjie.csproj", "{04C646B3-423B-4CB3-9CEE-551ED954EF9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.三大特性", "ProjectPractice.三大特性\ProjectPractice.三大特性.csproj", "{826EB721-527B-49B2-9E6D-F942698C0EED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{04C646B3-423B-4CB3-9CEE-551ED954EF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04C646B3-423B-4CB3-9CEE-551ED954EF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04C646B3-423B-4CB3-9CEE-551ED954EF9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826EB721-527B-49B2-9E6D-F942698C0EED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826EB721-527B-49B2-9E6D-F942698C0EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826EB721-527B-49B2-9E6D-F942698C0EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826EB721-527B-49B2-9E6D-F942698C0EED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

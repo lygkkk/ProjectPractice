@@ -48,31 +48,31 @@ namespace ProjectPractice.NPOI
         /// <param name="columnNum"></param>
         private void GetCellType(ICell cell, DataRow dataRow, int columnNum)
         {
-            try
-            {
-                switch (cell.CellType)
-                {
-                    case CellType.String:
-                        dataRow[columnNum] = cell.StringCellValue;
-                        break;
-                    case CellType.Numeric:
-                        if (DateUtil.IsCellDateFormatted(cell))
-                        {
-                            dataRow[columnNum] = cell.DateCellValue;
-                        }
-                        else
-                        {
-                            dataRow[columnNum] = cell.NumericCellValue;
-                        }
-                        break;
+            //try
+            //{
+            //    switch (cell.CellType)
+            //    {
+            //        case CellType.String:
+            //            dataRow[columnNum] = cell.StringCellValue;
+            //            break;
+            //        case CellType.Numeric:
+            //            if (DateUtil.IsCellDateFormatted(cell))
+            //            {
+            //                dataRow[columnNum] = cell.DateCellValue;
+            //            }
+            //            else
+            //            {
+            //                dataRow[columnNum] = cell.NumericCellValue;
+            //            }
+            //            break;
 
-                    default:
-                        dataRow[columnNum] = "";
-                        break;
-                }
-            }
-            catch (Exception e)
-            { }
+            //        default:
+            //            dataRow[columnNum] = "";
+            //            break;
+            //    }
+            //}
+            //catch (Exception e)
+            //{ }
         }
         #endregion
 

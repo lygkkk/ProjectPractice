@@ -18,7 +18,7 @@ namespace ExcelAddIn1
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             //Excel.Workbook excel = Application.GetOpenFilename(@"C:\Users\Administrator\Desktop\销售跟踪表.xlsx");
-
+            //MessageBox.Show("aaaaa");
             Application.SheetChange += CellChange;
 
         }
@@ -27,18 +27,28 @@ namespace ExcelAddIn1
         {
         }
 
-
+        #region 单元格内容被修改后触发事件
+        /// <summary>
+        /// 单元格内容被修改后触发事件
+        /// </summary>
+        /// <param name="sender">工作表</param>
+        /// <param name="target">目标单元格</param>
         private void CellChange(object sender, Excel.Range target)
         {
+            var sheet = (Excel.Worksheet) sender;
             
-            
-            application = new Excel.Application {Visible = true};
-            application.Workbooks.Open(@"C:\Users\Administrator\Desktop\销售跟踪表.xlsx");
+            MessageBox.Show(sheet.Name);
+            MessageBox.Show(target.Address);
+            //application = new Excel.Application {Visible = true};
+            //application.Workbooks.Open(@"C:\Users\Administrator\Desktop\销售跟踪表.xlsx");
             //Excel.Workbook = workbooks[""];
 
             //application = (Excel.Application) Marshal.GetActiveObject("excel.application");
             //application.Workbooks.Open()
         }
+
+        #endregion
+
 
         #region VSTO 生成的代码
 

@@ -108,22 +108,29 @@ namespace ProjectPractice.Netcathc_dotnet
 
         private void Login()
         {
-            string account = "userId:15906696262,";
-            string pwd = "pwd:696262";
-            string verificationCode = textBox1.Text;
-            byte[] paramBytes = Encoding.UTF8.GetBytes(account + pwd);
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"http://sso.ematong.com/checkYzm.do?yzm={verificationCode}");
+            string account = "userId=15906696262&";
+            string pwd = "pwd=696262";
+            string verificationCode = $"yzm={textBox1.Text}";
+
+            string param = _loginInfor[0] + _loginInfor[1] + _loginInfor[2] + account + pwd + verificationCode;
+            string param1 = account + pwd;
+            byte[] paramBytes = Encoding.UTF8.GetBytes(param1);
+
+
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"http://sso.ematong.com/checkYzm.do?yzm={verificationCode}");
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"http://bm.ematong.com/index");
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"http://sso.ematong.com/login?service=http://bm.ematong.com/shiro-cas");
+
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"http://bm.ematong.com/public/getUserInfo?callback=?");
+            
             request.Method = "POST";
-            //request.Headers.Add("Referer", @"http://sso.ematong.com/login?service=http://bm.ematong.com/shiro-cas");
-            request.Referer = @"http://bm.ematong.com/public/getUserInfo?callback=?";
+            request.Referer = @"http://sso.ematong.com/login?service=http://bm.ematong.com/shiro-cas";
             request.ContentLength = paramBytes.Length;
             request.Headers.Add("cookie", _cookie);
             request.KeepAlive = true;
-            //string param = "";
-            //_loginInfor.ForEach(val => param += val);
 
-           
-
+            
             Stream requestStream = request.GetRequestStream();
             requestStream.Write(paramBytes, 0, paramBytes.Length);
 

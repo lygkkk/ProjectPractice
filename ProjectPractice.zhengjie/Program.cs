@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectPractice.Netcathc_dotnet
+namespace ProjectPractice.zhengjie
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace ProjectPractice.Netcathc_dotnet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Lansurewyx());
+            Application.Run(new Form1());
         }
     }
 }

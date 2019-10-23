@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,15 +12,33 @@ namespace Delegate
     {
         static void Main(string[] args)
         {
-            A a = new A();
-            B b = new B(a);
-            C c = new C(a);
+            List<Person> p = new List<Person>()
+            {
+                new Person(){Name = "q1", Gender = "男"},
+                new Person(){Name = "q2", Gender = "男"},
+                new Person(){Name = "q3", Gender = "女"},
+                new Person(){Name = "q4", Gender = "男"},
+                new Person(){Name = "q5", Gender = "女"},
+                new Person(){Name = "q6", Gender = "男"},
+            };
 
-            a.Raise("左");
-            a.Raise("右");
-            a.Fall();
+            Func<List<Person>, IEnumerable<Person>> func = Fun;
+
+            del1(Fun, p);
+
+        }
 
 
+
+        public static IEnumerable<Person> Fun(List<Person> s1)
+        {
+           return s1.Where(p => p.Gender == "女");
+        }
+
+        public static void del1(Func<List<Person>, IEnumerable<Person>> qq, List<Person> list)
+        {
+            
+            Debug.Print(qq(list).Count().ToString());
         }
     }
 }

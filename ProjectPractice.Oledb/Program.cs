@@ -18,7 +18,7 @@ namespace ProjectPractice.Oledb
 
         static void Main(string[] args)
         {
-            DataBase = @"C:\Users\Administrator\Desktop\工作簿1.xlsx";
+            DataBase = @"C:\Users\Administrator\Desktop\Test1.xlsx";
             Provider = @"Provider=Microsoft.Ace.OleDb.12.0;Extended Properties=Excel 12.0;Data Source=";
             Oledb = new OleDbConnection(Provider + DataBase);
 
@@ -26,9 +26,11 @@ namespace ProjectPractice.Oledb
 
             using (OleDbDataAdapter dataAdapter = new OleDbDataAdapter())
             {
-                dataAdapter.SelectCommand = new OleDbCommand("SELECT qqq FROM [Sheet1$]");
+                dataAdapter.SelectCommand = new OleDbCommand("SELECT * FROM [Sheet1$]");
                 dataAdapter.SelectCommand.Connection = Oledb;
                 dataAdapter.Fill(dt);
+                //获取第一列
+                var arr = dt.AsEnumerable().Select(e => e.Field<string>("Name")).ToArray();
             }
 
             object[,] result = new object[18,1];

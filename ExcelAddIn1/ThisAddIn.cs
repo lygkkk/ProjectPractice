@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
+using System.Diagnostics;
 
 namespace ExcelAddIn1
 {
@@ -36,9 +37,12 @@ namespace ExcelAddIn1
         private void CellChange(object sender, Excel.Range target)
         {
             var sheet = (Excel.Worksheet) sender;
-            
-            MessageBox.Show(sheet.Name);
-            MessageBox.Show(target.Address);
+
+            //Process[] process = Process.GetProcessesByName("");
+            Form1 form1 = new Form1();
+            form1.Show();
+            //MessageBox.Show(sheet.Name);
+            //MessageBox.Show(target.Address);
             //application = new Excel.Application {Visible = true};
             //application.Workbooks.Open(@"C:\Users\Administrator\Desktop\销售跟踪表.xlsx");
             //Excel.Workbook = workbooks[""];

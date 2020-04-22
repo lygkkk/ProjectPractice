@@ -18,7 +18,7 @@ namespace ProjectPractice.Oledb
 
         static void Main(string[] args)
         {
-            DataBase = @"C:\Users\Administrator\Desktop\Test1.xlsx";
+            DataBase = @"C:\Users\Administrator\Desktop\表格.xlsx";
             Provider = @"Provider=Microsoft.Ace.OleDb.12.0;Extended Properties=Excel 12.0;Data Source=";
             Oledb = new OleDbConnection(Provider + DataBase);
 
@@ -30,14 +30,34 @@ namespace ProjectPractice.Oledb
                 dataAdapter.SelectCommand.Connection = Oledb;
                 dataAdapter.Fill(dt);
                 //获取第一列
-                var arr = dt.AsEnumerable().Select(e => e.Field<string>("Name")).ToArray();
+                //var arr = dt.AsEnumerable().Select(e => e.Field<string>("Name")).ToArray();
             }
+            foreach (DataRow item in dt.Rows)
+            {
+                foreach (var item1 in item.ItemArray)
+                {
 
-            object[,] result = new object[18,1];
+                }
+            }
+            
+
+            object[,] result = new object[53,8];
+
+            int row = 0;
+            int col = 0;
+            string[] tmp;
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                result[i,0] = dt.Rows[i][2];
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    if (dt.Rows[i][j].ToString().Length > 13)
+                    {
+                        tmp = dt.Rows[i][j].ToString().Split('；');
+
+                    }
+                    result[i, j] = dt.Rows[i][j];
+                }
             }
 
             Excel.Application app = (Excel.Application) Marshal.GetActiveObject("excel.application");

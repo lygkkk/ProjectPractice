@@ -44,9 +44,8 @@
             // 
             // tab1
             // 
-            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
-            this.tab1.Label = "TabAddIns";
+            this.tab1.Label = "tab1";
             this.tab1.Name = "tab1";
             // 
             // group1
@@ -58,7 +57,7 @@
             // 
             // label1
             // 
-            this.label1.Label = "label1";
+            this.label1.Label = "看看";
             this.label1.Name = "label1";
             // 
             // Ribbon1

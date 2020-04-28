@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using NPOI.SS.UserModel;
 using NPOI.XSSF;
@@ -17,35 +19,26 @@ namespace ProjectPractice.FileStreamAsync
         private static List<string> _fileNameList;
         static async Task Main(string[] args)
         {
-
-            Console.WriteLine("****************************************");
-            Console.WriteLine("*请把要转成excel的SKU文件夹放到桌面。");
-            Console.WriteLine("*如果已经放好请按任意键继续。");
-            Console.ReadKey(true);
-            Console.WriteLine("*请输入文件夹的名称。");
-            string folderName = Console.ReadLine()?.Trim();
-
-            string deskTopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\";
-            while (string.IsNullOrEmpty(folderName))
+            string path = @"C:\Users\Administrator\Desktop\Example1.txt";
+            var result =await ReadTextFileData(path);
+            for (int i = 0; i < 10000; i++)
             {
-                folderName = Console.ReadLine()?.Trim();
+                Console.WriteLine($"第{i}行：{result[i]}");
             }
+            
+        }
 
-            while (!Directory.Exists($@"{deskTopPath}{folderName}"))
+        public static async Task<List<string>> ReadTextFileData(string path)
+        {
+            List<string> list = new List<string>();
+            using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
             {
-                Console.WriteLine("*文件夹的名称输入有误,请确认后再重新输入。");
-                folderName = Console.ReadLine()?.Trim();
+                while (!sr.EndOfStream)
+                {
+                    list.Add((await sr.ReadLineAsync()).ToString());
+                }
             }
-
-            string[] filesPath = Directory.GetFiles(deskTopPath + folderName);
-
-
-            GetDataSource(filesPath);
-            DataProcessing();
-            WriteExcel(deskTopPath);
-
-            Console.WriteLine("*****转换结束*****");
-            Console.WriteLine("*请到桌面去查看。*");
+            return list;
         }
 
         static void WriteExcel(string deskTopPath)

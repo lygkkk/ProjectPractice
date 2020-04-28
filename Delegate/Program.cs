@@ -10,8 +10,13 @@ namespace Delegate
 {
     class Program
     {
+        public delegate T1 Testqq<T1, T2>(T2 t2);
         static void Main(string[] args)
         {
+            (double, int) t = (4.5, 3);
+            Console.WriteLine(t.ToString());
+            Console.WriteLine($"Hash code of {t} is {t.GetHashCode()}.");
+
             List<Person> p = new List<Person>()
             {
                 new Person(){Name = "q1", Gender = "男"},

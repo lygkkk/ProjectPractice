@@ -4,12 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68046C18-94DE-4CC1-A8A1-F9273B3BB24F}</ProjectGuid>
+    <ProjectGuid>{C1D659AA-88B7-406E-932D-8542DBA06005}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ASYNC</RootNamespace>
-    <AssemblyName>ASYNC</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>ProjectPractice.GetFiles</RootNamespace>
+    <AssemblyName>ProjectPractice.GetFiles</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

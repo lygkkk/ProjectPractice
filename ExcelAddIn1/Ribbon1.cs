@@ -10,7 +10,8 @@ namespace ExcelAddIn1
     {
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
-
+            tab1.Label = "zijzuod";
+            Tag = "asasa";
         }
     }
 }

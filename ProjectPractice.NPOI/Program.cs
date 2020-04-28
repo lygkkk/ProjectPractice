@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq.Expressions;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.Streaming;
 using NPOI.XSSF.UserModel;
@@ -19,6 +20,8 @@ namespace ProjectPractice.NPOI
         private static int LastRow { get; set; }
         static void Main(string[] args)
         {
+
+            GetAllData((sheet, dt) => { dt.NewRow(); });
 
             FileStream = File.OpenRead(@"C:\Users\Administrator\Desktop\单据审核中心.xlsx");
             Workbook = new XSSFWorkbook(FileStream);
@@ -76,7 +79,7 @@ namespace ProjectPractice.NPOI
         }
         #endregion
 
-        private static void GetAllData()
+        private static void GetAllData(Action<ISheet, DataTable> ddAction)
         {
 
         }

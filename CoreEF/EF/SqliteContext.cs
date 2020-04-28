@@ -11,22 +11,22 @@ namespace CoreEF.EF
 {
     public class SqliteContext :DbContext
     {
-        //public DbSet<UserInfo> UserInfos { get; set; }
+        public DbSet<UserInfo> UserInfos { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         //public DbSet<Post> Posts { get; set; }
-        //public SqliteContext(DbContextOptions<SqliteContext> options) : base (options)
-        //{ 
-        //}
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        public SqliteContext(DbContextOptions<SqliteContext> options) : base(options)
         {
-            options.UseSqlite(@"Data Source=h:\test.db");
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder options) 
+        {
+            options.UseSqlite(@"h:\lab.db");
         }
 
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Blog>().HasMany(b => b.Posts).WithOne();
+            //modelBuilder.Entity<Blog>().HasMany(b => b.Posts).WithOne();
             //modelBuilder.
             //modelBuilder.Entity<UserInfo>().ToTable("UserInfo", "test");
             //base.OnModelCreating(modelBuilder);

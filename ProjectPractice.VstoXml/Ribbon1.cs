@@ -77,6 +77,11 @@ namespace ProjectPractice.VstoXml
         {
             return $"第{index}条";
         }
+
+        public string GetLabel(Office.IRibbonControl ribbon)
+        {
+            return "神经病";
+        }
         #endregion
 
         #region 帮助器

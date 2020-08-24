@@ -1,5 +1,9 @@
-﻿using System.Data;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
+using System.Data;
 using System.Data.OleDb;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace ProjectPractice.Oledb
@@ -20,15 +24,15 @@ namespace ProjectPractice.Oledb
             var comm = conn.CreateCommand();
             comm.CommandText = sql;
             
-            var tb = new DataTable();
+            var tb = new System.Data.DataTable();
             tb.Load(await comm.ExecuteReaderAsync());
         }
-        public async Task<DataTable> SelectDataTableAsync(string sql)
+        public async Task<System.Data.DataTable> SelectDataTableAsync(string sql)
         {
             Provider = @"Provider=Microsoft.Ace.OleDb.12.0;Extended Properties=Excel 12.0;Data Source=";
             //DataBase = @"C:\Users\Administrator\Desktop\表格.xlsx";
             //Oledb = new OleDbConnection(Provider + DataBase);
-            DataTable dt = new DataTable();
+            System.Data.DataTable dt = new System.Data.DataTable();
 
             await Task.Run(() =>
             {
@@ -94,12 +98,12 @@ namespace ProjectPractice.Oledb
 
             return dp;
         }
-        public DataTable Select(string sql)
+        public System.Data.DataTable Select(string sql)
         {
             Provider = @"Provider=Microsoft.Ace.OleDb.12.0;Extended Properties=Excel 12.0;Data Source=";
             //DataBase = @"C:\Users\Administrator\Desktop\表格.xlsx";
             //Oledb = new OleDbConnection(Provider + DataBase);
-            DataTable dt = new DataTable();
+            System.Data.DataTable dt = new System.Data.DataTable();
             using (OleDbConnection oleDb = new OleDbConnection(Provider + DataBase))
             {
                 using (OleDbDataAdapter dataAdapter = new OleDbDataAdapter())
@@ -113,6 +117,12 @@ namespace ProjectPractice.Oledb
                 }
             }
             return dt;
+        }
+
+        public IQueryable<System.Data.DataTable> GetDataTables<T1, T2>(Expression<Func<T1, T2>> pre)
+        {
+            pre.ToString();
+            return null;
         }
     }
 }

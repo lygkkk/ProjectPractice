@@ -1,4 +1,6 @@
-﻿using PuppeteerSharp;
+﻿using ProjectPractice.Pupperteer.Pages;
+using PuppeteerSharp;
+using PuppeteerSharp.Contrib.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +11,15 @@ namespace ProjectPractice.Pupperteer
 {
     public class PageIndex
     {
-        private static string _url = "https://movie.douban.com/";
+        private static string _url = "https://www.xl720.com/";
         private static string _chromePath = @"C:\Program Files (x86)\Google\Chrome\chrome.exe";
 
-        public static async void Start()
+        public static async Task<bool> Start()
         {
             var page = await CreatePage();
+            var home = await page.GoToAsync<HomePage>(_url, new NavigationOptions { WaitUntil = new[] { WaitUntilNavigation.Networkidle2 } });
+            var result = await home.GetMovieDataList();
+            return true;
         }
 
         private static async Task<Page> CreatePage()

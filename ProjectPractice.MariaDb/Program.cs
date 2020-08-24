@@ -23,7 +23,7 @@ namespace ProjectPractice.MariaDb
 
 
 
-            var dd = mariaContext.UserInfos.Where(e => e.Name.Contains("")).ToList();
+            var dd = mariaContext.UserInfos.Select
 
             
         }

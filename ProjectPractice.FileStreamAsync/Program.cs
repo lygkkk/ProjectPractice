@@ -17,28 +17,34 @@ namespace ProjectPractice.FileStreamAsync
         private static List<string[]> _sourceList;
         private static List<List<string[]>> _resultList;
         private static List<string> _fileNameList;
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             string path = @"C:\Users\Administrator\Desktop\Example1.txt";
-            var result =await ReadTextFileData(path);
-            for (int i = 0; i < 10000; i++)
-            {
-                Console.WriteLine($"第{i}行：{result[i]}");
-            }
+
+     
+                foreach (var item in ReadTextFileData(path))
+                {
+                    Console.WriteLine($"第X行：{item}");
+                }
+                
+            
             
         }
 
-        public static async Task<List<string>> ReadTextFileData(string path)
+        public static IEnumerable<Task<string>> ReadTextFileData(string path)
         {
-            List<string> list = new List<string>();
+            //List<string> list = new List<string>();
             using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
             {
+                
                 while (!sr.EndOfStream)
                 {
-                    list.Add((await sr.ReadLineAsync()).ToString());
+                    yield return sr.ReadLineAsync();
+                    //list.Add(await sr.ReadLineAsync());
+                    //return await sr.ReadLineAsync();
                 }
             }
-            return list;
+            //return list;
         }
 
         static void WriteExcel(string deskTopPath)

@@ -164,5 +164,18 @@ namespace ProjectPractice.QRCodeWinfom
         }
 
         #endregion
+
+        private void textBox1_DragDrop(object sender, DragEventArgs e)
+        {
+            MessageBox.Show(e.Data.ToString());
+        }
+
+        private void textBox1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Link;
+            }
+        }
     }
 }

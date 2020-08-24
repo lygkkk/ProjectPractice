@@ -31,5 +31,10 @@ namespace ProjectPractice.WinFormAsync
         {
 
         }
+
+        private void Form1_DragDrop(object sender, DragEventArgs e)
+        {
+            MessageBox.Show("");
+        }
     }
 }

@@ -20,31 +20,42 @@ namespace ConsoleApp1
         }
         static void Main(string[] args)
         {
+            TestArgs(args);
 
-            UserInfo userInfos = new UserInfo();
 
-            var ui = userInfos.GetType().GetProperties();
+            MessageBox.Show("参数对了");
+            //UserInfo userInfos = new UserInfo();
 
-            foreach (var item in ui)
-            {
-                //判断是否是泛型
-                if (item.PropertyType.IsGenericType)
-                {
-                    //获取泛型的真实类型
-                    var type = item.PropertyType.GetGenericArguments()[0];
-                    //创建实例
-                    var o = Activator.CreateInstance(type);
-                    
-                    //var t = o.GetType().GetProperties();
-                    foreach (var item1 in type.GetProperties())
-                    {
-                        Console.WriteLine(item1.Name);
-                    }
-                }
-                    
-            }
+            //var ui = userInfos.GetType().GetProperties();
 
-            JudePropertyType<UserInfo>();
+            //foreach (var item in ui)
+            //{
+            //    //判断是否是泛型
+            //    if (item.PropertyType.IsGenericType)
+            //    {
+            //        //获取泛型的真实类型
+            //        var type = item.PropertyType.GetGenericArguments()[0];
+            //        //创建实例
+            //        var o = Activator.CreateInstance(type);
+
+            //        //var t = o.GetType().GetProperties();
+            //        foreach (var item1 in type.GetProperties())
+            //        {
+            //            Console.WriteLine(item1.Name);
+            //        }
+            //    }
+
+            //}
+
+            //JudePropertyType<UserInfo>();
+        }
+
+        public static void TestArgs(string[] args)
+        {
+            if (args.Length == 0)
+                throw new ArgumentException("参数太少了");
+      
+
         }
 
         public static IEnumerable<int> FilterWithoutYield

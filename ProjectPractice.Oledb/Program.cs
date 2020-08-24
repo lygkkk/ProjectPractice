@@ -14,6 +14,7 @@ namespace ProjectPractice.Oledb
         [STAThread]
         static async Task Main(string[] args)
         {
+
             OledbExcel oledb = new OledbExcel(@"C:\Users\Administrator\Desktop\222.xls");
 
             var dt = oledb.SelectDataTableAsync("SELECT MONTH(出厂时间), DAY(出厂时间), 车牌号, 交货量 FROM [222$]").Result;

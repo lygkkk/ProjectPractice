@@ -16,56 +16,14 @@ namespace ProjectPractice.FileStream
         private static List<string[]> resultList;
         static void Main(string[] args)
         {
-            
-           
-            
-            application = new Excel.Application();
-            
-            application.Workbooks.Open(@"C:\Users\Administrator\Desktop\员工信息查看模板1.xlsx");
 
-            sourceList = new List<string[]>();
-            //StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\大重汇.txt", Encoding.Default);
-            sourceList.Add(File.ReadAllLines(@"C:\Users\Administrator\Desktop\大重汇.txt"));
+            string path = @"C:\Users\Administrator\Desktop\2.txt";
 
-            sourceList.ForEach(x =>
+            using (System.IO.FileStream fs = File.Create(path))
             {
-                string pattern = @"—————— \d*  当前账号 |拖 \d* :";
-                
-                for (int i = 0; i < x.Length; i++)
-                {
-                    if (x[i].Contains("当前账号"))
-                    {
-                        string str = Regex.Replace(x[i], pattern, string.Empty);
-                        string[] str1 = str.Split(' ');
-                        //int start = str.IndexOf("号") + 1;
-                        //x[i] = str.Substring(start); 
-                    }
-                }
-            });
-            
-
-            //Console.WriteLine();
-            string deskTopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            string folderName = @"\文本汇总";
-
-            string[] filesPath = Directory.GetFiles(deskTopPath + folderName);
-
-            
-            foreach (string file in filesPath)
-            {
-                //System.IO.FileStream fileStream = new System.IO.FileStream("", FileMode.OpenOrCreate, FileAccess.Read);
-                //StreamReader streamReader = new StreamReader(file, Encoding.Default);
-
-                sourceList.Add(File.ReadAllLines(file));
-            }
-
-            resultList = new List<string[]>();
-            foreach (string[] file in sourceList)
-            {
-                foreach (string line in file)
-                {
-                    resultList.Add(line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
-                }
+                //byte[] info = new UTF8Encoding(true).GetBytes("测试测试");
+                byte[] info = Encoding.UTF8.GetBytes("测试一下");
+                fs.Write(info, 0, info.Length);
             }
 
         }

@@ -16,6 +16,8 @@ namespace ExcelAddIn1
         private Excel.Dialog dialog;
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            double[] start = new double[2];
+            //var x = Application.Workbooks;
             //Excel.Workbook excel = Application.GetOpenFilename(@"C:\Users\Administrator\Desktop\销售跟踪表.xlsx");
             //MessageBox.Show("aaaaa");
 
@@ -33,14 +35,14 @@ namespace ExcelAddIn1
             //}
             //catch { }
 
-            Excel.Worksheet sheet = Application.ActiveSheet;
-                Shapes shapes = sheet.Shapes;
+            //Excel.Worksheet sheet = Application.ActiveSheet;
+            //    Shapes shapes = sheet.Shapes;
 
-                Excel.Shape shapeBtn = sheet.Shapes.AddOLEObject("Forms.CommandButton.1", Type.Missing, false, false, Type.Missing, Type.Missing, Type.Missing, 200, 100, 100, 100);
-                shapeBtn.Name = "btnClick";
-                MSForms.CommandButton CmdBtn = (MSForms.CommandButton)NewLateBinding.LateGet(
-                    sheet, null, "btnClick", null, null, null, null);
-                CmdBtn.Caption = "Click Me";
+            //    Excel.Shape shapeBtn = sheet.Shapes.AddOLEObject("Forms.CommandButton.1", Type.Missing, false, false, Type.Missing, Type.Missing, Type.Missing, 200, 100, 100, 100);
+            //    shapeBtn.Name = "btnClick";
+            //    MSForms.CommandButton CmdBtn = (MSForms.CommandButton)NewLateBinding.LateGet(
+            //        sheet, null, "btnClick", null, null, null, null);
+            //    CmdBtn.Caption = "Click Me";
                 //CmdBtn..Click += new Microsoft.Vbe.Interop.Forms.CommandButtonEvents_ClickEventHandler(CmdBtn_Click);
                 //shapes.Item(0).OnAction = "";
                 //MessageBox.Show(shapes.Count.ToString());

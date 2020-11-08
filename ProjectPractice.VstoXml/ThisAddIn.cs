@@ -1,4 +1,5 @@
 ﻿using Microsoft.Office.Core;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,14 @@ namespace ProjectPractice.VstoXml
         private Ribbon1 ribbon;
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+           
+            //Office.CommandBarControls commandBars;
+            //commandBars = Application.CommandBars.Add("qq", MsoBarPosition.msoBarLeft);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
+
         }
 
         private void WorkbookOpen(Excel.Workbook workbook)

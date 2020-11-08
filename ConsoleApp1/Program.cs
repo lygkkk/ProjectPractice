@@ -20,6 +20,8 @@ namespace ConsoleApp1
         }
         static void Main(string[] args)
         {
+            var f = Directory.GetFiles(@"f:\", "*", SearchOption.TopDirectoryOnly);
+
             TestArgs(args);
 
 

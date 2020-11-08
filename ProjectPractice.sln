@@ -77,7 +77,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.QRCodeConso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.VstoXml", "ProjectPractice.VstoXml\ProjectPractice.VstoXml.csproj", "{07248480-D10A-43C2-821C-308E5C2CA42E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.Pupperteer", "ProjectPractice.Pupperteer\ProjectPractice.Pupperteer.csproj", "{C2673A7E-ACF8-42EA-933A-63122EFE88C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectPractice.Pupperteer", "ProjectPractice.Pupperteer\ProjectPractice.Pupperteer.csproj", "{C2673A7E-ACF8-42EA-933A-63122EFE88C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.PDF", "ProjectPractice.PDF\ProjectPractice.PDF.csproj", "{565D58F7-A84E-4354-80E9-D396F3C6A505}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.TestNetWinform", "ProjectPractice.TestNetWinform\ProjectPractice.TestNetWinform.csproj", "{4321B183-F840-472F-9657-3F0734E855E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectPractice.AsposeExcel", "ProjectPractice.AsposeExcel\ProjectPractice.AsposeExcel.csproj", "{8006E715-577E-40F5-863A-FA830A76A5DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +243,18 @@ Global
 		{C2673A7E-ACF8-42EA-933A-63122EFE88C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2673A7E-ACF8-42EA-933A-63122EFE88C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2673A7E-ACF8-42EA-933A-63122EFE88C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{565D58F7-A84E-4354-80E9-D396F3C6A505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{565D58F7-A84E-4354-80E9-D396F3C6A505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{565D58F7-A84E-4354-80E9-D396F3C6A505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{565D58F7-A84E-4354-80E9-D396F3C6A505}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4321B183-F840-472F-9657-3F0734E855E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4321B183-F840-472F-9657-3F0734E855E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4321B183-F840-472F-9657-3F0734E855E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4321B183-F840-472F-9657-3F0734E855E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8006E715-577E-40F5-863A-FA830A76A5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8006E715-577E-40F5-863A-FA830A76A5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8006E715-577E-40F5-863A-FA830A76A5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8006E715-577E-40F5-863A-FA830A76A5DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

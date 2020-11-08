@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
-  <ribbon>
+  <ribbon startFromScratch="true">
     <tabs>
       <tab id="Tab1" label="测试">
         <group id="MyGroup" label="My Group">
@@ -13,9 +13,10 @@
       </tab>
     </tabs>
 	  <qat>
-		  <sharedControls>
-			  <button idMso="Paste" label="aa"/>
-		  </sharedControls>
+      <!--<documentControls>
+        <control idMso="CalculateNow" />
+        <control idMso="HyperlinkInsert" />
+      </documentControls>-->
 
 
 		 

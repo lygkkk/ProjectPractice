@@ -57,7 +57,7 @@
             // 
             // label1
             // 
-            this.label1.Label = "看看";
+            this.label1.Label = "qwe";
             this.label1.Name = "label1";
             // 
             // Ribbon1

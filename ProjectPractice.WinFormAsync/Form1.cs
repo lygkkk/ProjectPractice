@@ -24,7 +24,11 @@ namespace ProjectPractice.WinFormAsync
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Task t = Task.Run(() => {
+                string str = "www";
+                this.Invoke(new Action<string>(s1 =>  label1.Text = s1), str);
+            });
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

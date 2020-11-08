@@ -17,6 +17,13 @@ namespace ProjectPractice.FileStream
         static void Main(string[] args)
         {
 
+            
+
+        }
+
+        #region 写入文本文档
+        public void WriteTXT()
+        {
             string path = @"C:\Users\Administrator\Desktop\2.txt";
 
             using (System.IO.FileStream fs = File.Create(path))
@@ -25,8 +32,8 @@ namespace ProjectPractice.FileStream
                 byte[] info = Encoding.UTF8.GetBytes("测试一下");
                 fs.Write(info, 0, info.Length);
             }
-
         }
+        #endregion
 
         #region 获取指定的进程
         /// <summary>

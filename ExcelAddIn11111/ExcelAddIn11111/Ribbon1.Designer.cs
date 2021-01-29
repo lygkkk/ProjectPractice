@@ -1,4 +1,4 @@
-﻿namespace ExcelAddIn1
+﻿namespace ExcelAddIn11111
 {
     partial class Ribbon1 : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
@@ -19,7 +19,6 @@
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         protected override void Dispose(bool disposing)
         {
-            Globals.ThisAddIn.Application.ThisWorkbook
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -35,39 +34,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Office.Tools.Ribbon.RibbonDialogLauncher ribbonDialogLauncherImpl1 = this.Factory.CreateRibbonDialogLauncher();
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.label1 = this.Factory.CreateRibbonLabel();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.checkBox1 = this.Factory.CreateRibbonCheckBox();
+            this.splitButton1 = this.Factory.CreateRibbonSplitButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
+            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
-            this.tab1.Label = "tab1";
+            this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
             // group1
             // 
-            this.group1.DialogLauncher = ribbonDialogLauncherImpl1;
-            this.group1.Items.Add(this.label1);
             this.group1.Items.Add(this.button1);
+            this.group1.Items.Add(this.checkBox1);
+            this.group1.Items.Add(this.splitButton1);
             this.group1.Label = "group1";
             this.group1.Name = "group1";
-            // 
-            // label1
-            // 
-            this.label1.Label = "qwe";
-            this.label1.Name = "label1";
             // 
             // button1
             // 
             this.button1.Label = "button1";
             this.button1.Name = "button1";
             this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Label = "checkBox1";
+            this.checkBox1.Name = "checkBox1";
+            // 
+            // splitButton1
+            // 
+            this.splitButton1.Label = "splitButton1";
+            this.splitButton1.Name = "splitButton1";
             // 
             // Ribbon1
             // 
@@ -87,8 +92,9 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonLabel label1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBox1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonSplitButton splitButton1;
     }
 
     partial class ThisRibbonCollection

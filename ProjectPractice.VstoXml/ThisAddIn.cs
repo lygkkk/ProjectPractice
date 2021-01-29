@@ -15,7 +15,7 @@ namespace ProjectPractice.VstoXml
         private Ribbon1 ribbon;
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-           
+            
             //Office.CommandBarControls commandBars;
             //commandBars = Application.CommandBars.Add("qq", MsoBarPosition.msoBarLeft);
         }

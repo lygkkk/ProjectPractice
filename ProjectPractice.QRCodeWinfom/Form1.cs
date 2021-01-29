@@ -20,7 +20,7 @@ namespace ProjectPractice.QRCodeWinfom
         {
             InitializeComponent();
 
-            pictureBox1.Image= GenByZXingNet("张永富");
+            //pictureBox1.Image= GenByZXingNet("张永富");
         }
         #region C#生成二维码-基础版本
         //需要引用ZXing.DLL  可以百度一下  一个很好用的二维码生成程序集《DLL文件啦》
@@ -38,7 +38,7 @@ namespace ProjectPractice.QRCodeWinfom
             writer.Format = BarcodeFormat.QR_CODE;
             writer.Options.Hints.Add(EncodeHintType.CHARACTER_SET, "UTF-8");//编码问题
             writer.Options.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
-
+         
             writer.Options.Height = writer.Options.Width = codeSizeInPixels;
             writer.Options.Margin = 0;//设置边框1            ZXing.Common.BitMatrix bm = writer.Encode(msg);
             Bitmap img = writer.Write(msg);
@@ -176,6 +176,16 @@ namespace ProjectPractice.QRCodeWinfom
             {
                 e.Effect = DragDropEffects.Link;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = GenByZXingNet("lygkkk");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(Read((Bitmap)pictureBox1.Image));
         }
     }
 }

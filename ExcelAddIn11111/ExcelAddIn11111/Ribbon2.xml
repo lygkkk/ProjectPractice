@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab id="q1" label="测试一下吧">
+        <group id="g1" label="集合组">
+          <comboBox id="combobox1" getItemCount="GetItemCount" getItemLabel="GetItemLabel">
+
+          </comboBox>
+
+          <button id ="b1" getLabel="GetLabel"/>
+        </group>
+        
+      </tab>
+      <tab id="q2" label="测试一下吧"></tab>
+    </tabs>
+  </ribbon>
+</customUI>
+

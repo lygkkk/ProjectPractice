@@ -20,12 +20,29 @@ namespace ConsoleApp1
         }
         static void Main(string[] args)
         {
-            var f = Directory.GetFiles(@"f:\", "*", SearchOption.TopDirectoryOnly);
+            Form1 form1 = new Form1();
+            Type type = form1.GetType();
+            string xx = type.GUID.ToString();
+            form1.Show();
+            //string ls = "12345上山打老虎";
+            //UserInfo user = new UserInfo();
+            //List<UserInfo> list = new List<UserInfo> { 
+            //    new UserInfo{ Age = 18, Name = "zj" },
+            //    new UserInfo{ Age = 50, Name = "ct" },
+            //};
+            //var x = list.Select(e => {
+            //    if (e.Age == 50)
+            //    {
+            //        return e;
+            //    }
+            //    return null;
+            //});
+            //var f = Directory.GetFiles(@"f:\", "*", SearchOption.TopDirectoryOnly);
 
-            TestArgs(args);
+            //TestArgs(args);
 
 
-            MessageBox.Show("参数对了");
+            //MessageBox.Show("参数对了");
             //UserInfo userInfos = new UserInfo();
 
             //var ui = userInfos.GetType().GetProperties();
@@ -51,13 +68,14 @@ namespace ConsoleApp1
 
             //JudePropertyType<UserInfo>();
         }
-
+        /// <summary>
+        /// 没啥子
+        /// </summary>
+        /// <param name="args">参数呀</param>
         public static void TestArgs(string[] args)
         {
             if (args.Length == 0)
                 throw new ArgumentException("参数太少了");
-      
-
         }
 
         public static IEnumerable<int> FilterWithoutYield
@@ -107,7 +125,7 @@ namespace ConsoleApp1
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public IList<ProductInfo> productInfos { get; set; }
+        //public IList<ProductInfo> productInfos { get; set; }
     }
 
     class ProductInfo
@@ -115,4 +133,60 @@ namespace ConsoleApp1
         public string Name { get; set; }
         public string Fenlei { get; set; }
     }
+
+    public abstract class SqlHelp
+    {
+        public string Provider { get; set; }
+        public abstract void Select();
+        public abstract void Add();
+        public abstract void Modify();
+    }
+
+    public class SqlserverHelp : SqlHelp
+    {
+        public override void Add()
+        {
+            Console.WriteLine("我是sqlserver,我要新增数据");
+        }
+
+        public override void Modify()
+        {
+            Console.WriteLine("我是sqlserver,我要修改数据");
+        }
+
+        public override void Select()
+        {
+            Console.WriteLine("我是sqlserver,我要查询数据");
+        }
+    }
+
+    public class MysqlHelp : SqlHelp, IDelAble
+    {
+        public override void Add()
+        {
+            Console.WriteLine("我是mysql,我要新增数据");
+        }
+
+        public void DelData()
+        {
+            Console.WriteLine("我是mysql,我要删除数据");
+        }
+
+        public override void Modify()
+        {
+            Console.WriteLine("我是mysql,我要修改数据");
+        }
+
+        public override void Select()
+        {
+            Console.WriteLine("我是mysql,我要查询数据");
+        }
+    }
+
+    interface IDelAble
+    {
+        void DelData();
+    }
+
+
 }

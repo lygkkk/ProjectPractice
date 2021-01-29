@@ -109,7 +109,7 @@ namespace ProjectPractice.NPOI
             {
                 Workbook = new XSSFWorkbook(fs);
                 Sheet = Workbook.GetSheetAt(0);
-                var x = Sheet.ShiftRows()
+                //var x = Sheet.ShiftRows()
                 for (int i = 0; i <= Sheet.LastRowNum; i++)
                 {
                     Row = Sheet.GetRow(i);
